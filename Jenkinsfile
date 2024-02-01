@@ -7,22 +7,38 @@ pipeline {
     }
 
     stages {
-        
+        stage('Initialize') {
+            steps {
+                script {
+                    // Install Docker
+                    sh 'sudo apt update && sudo apt install -y docker.io'
+                    
+                    // Add Jenkins user to Docker group
+                    sh 'sudo usermod -aG docker jenkins || true'
+                    
+                    // Restart Jenkins to apply changes
+                    sh 'sudo service jenkins restart || true'
+                    
+                    // Verify Docker installation
+                    sh 'docker --version'
+                }
+            }
+        }
+
         stage('Checkout') {
             steps {
                 checkout scm
             }
         }
 
-        stages {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh "docker build -t vishalvr21/cost_optimisation ."
+                    sh "docker build -t $DOCKER_IMAGE ."
                 }
             }
         }
-    }
+
         stage('Push Docker Image') {
             steps {
                 script {
