@@ -1,23 +1,27 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'jenkins/jenkins:dind'
+            label 'docker'
+        }
     
     environment {
         DOCKER_IMAGE = 'vishalvr21/cost_optimisation'
         REGISTRY_URL = 'docker.io'
-    }
-
+    }    
     stages {
         stage('Initialize') {
             steps {
                 script {
                     // Install Docker
-                    sh 'apt update && apt install -y docker.io'
-                    
-                    // Verify Docker installation
                     sh 'docker --version'
+                    sh 'dockerd --version'
                 }
             }
         }
+        
+        // Add more stages for your pipeline
+    }
 
         stage('Checkout') {
             steps {
