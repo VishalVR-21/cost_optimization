@@ -11,13 +11,7 @@ pipeline {
             steps {
                 script {
                     // Install Docker
-                    sh 'sudo apt update && sudo apt install -y docker.io'
-                    
-                    // Add Jenkins user to Docker group
-                    sh 'sudo usermod -aG docker jenkins || true'
-                    
-                    // Restart Jenkins to apply changes
-                    sh 'sudo service jenkins restart || true'
+                    sh 'apt update && apt install -y docker.io'
                     
                     // Verify Docker installation
                     sh 'docker --version'
