@@ -5,7 +5,7 @@ FROM python:3.8
 WORKDIR /app
 
 # Copy the local script and requirements to the container
-COPY s3_script.py /app/
+COPY main.py /app/
 COPY requirements.txt /app/
 
 # Install the required Python packages

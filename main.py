@@ -30,9 +30,3 @@ if __name__ == "__main__":
 
     fetch_s3_bucket_details(aws_access_key_id, aws_secret_access_key
 
-
-
-
-
-how to copy a s3 bucker into another refion 
-Copy objects from Source buckets to destination buckets using Sync command in CloudShell. 
