@@ -28,5 +28,4 @@ if __name__ == "__main__":
     aws_access_key_id = 'AKIARYIR2WD54MOFL6I5 '
     aws_secret_access_key = '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'
 
-    fetch_s3_bucket_details(aws_access_key_id, aws_secret_access_key
-
+    fetch_s3_bucket_details(aws_access_key_id, aws_secret_access_key)
