@@ -25,7 +25,7 @@ def fetch_s3_bucket_details(aws_access_key_id, aws_secret_access_key, aws_region
 
 if __name__ == "__main__":
     # Replace with your actual AWS credentials and region
-    aws_access_key_id = 'AKIARYIR2WD54MOFL6I5 '
-    aws_secret_access_key = 'rHYFWpw5yIjPfspe27fjiOJl0qOuHFt5cBuCltDi'
+    aws_access_key_id = ""
+    aws_secret_access_key = ""
 
     fetch_s3_bucket_details(aws_access_key_id, aws_secret_access_key)
